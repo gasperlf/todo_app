@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/utils/utils.dart';
+import 'package:todo_app/widgets/task_tile.dart';
 
 import '../data/models/task.dart';
 import 'common_container.dart';
@@ -24,15 +25,21 @@ class DisplayListOfTask extends StatelessWidget {
       child: tasks.isEmpty
           ? Center(
               child: Text(emptyTaskMessage,
-                  style: context.textTheme.headlineSmall)
-      )
-          : ListView.builder(
+                  style: context.textTheme.headlineSmall))
+          : ListView.separated(
               shrinkWrap: true,
               itemCount: tasks.length,
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
-                return const Text('Home');
-              }),
+                final task = tasks[index];
+                return TaskTile(task: task);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const Divider(
+                  thickness: 1.5,
+                );
+              },
+            ),
     );
   }
 }
