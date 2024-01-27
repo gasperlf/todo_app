@@ -35,7 +35,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-
         Positioned(
             top: 160,
             left: 0,
@@ -49,21 +48,20 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const DisplayListOfTask(
                         tasks: [
-                           Task(
+                          Task(
                               title: 'Title',
-                              note: 'note',
-                              time:'10:12',
-                              date:'Jan, 26',
+                              note: '',
+                              time: '10:12',
+                              date: 'Jan, 26',
                               isCompleted: false,
                               category: TaskCategories.shopping),
-                           Task(
+                          Task(
                               title: 'Title',
                               note: 'note',
-                              time:'10:12',
-                              date:'Jan, 26',
+                              time: '10:12',
+                              date: 'Jan, 26',
                               isCompleted: false,
                               category: TaskCategories.education),
-
                         ],
                       ),
                       const Gap(20),
@@ -76,15 +74,15 @@ class HomeScreen extends StatelessWidget {
                           Task(
                               title: 'Title',
                               note: 'note',
-                              time:'10:12',
-                              date:'Jan, 26',
+                              time: '10:12',
+                              date: 'Jan, 26',
                               isCompleted: true,
                               category: TaskCategories.personal),
                           Task(
                               title: 'Title 2 title 2 title 2',
                               note: 'note',
-                              time:'10:12',
-                              date:'Jan, 26',
+                              time: '10:12',
+                              date: 'Jan, 26',
                               isCompleted: true,
                               category: TaskCategories.work),
                         ],
