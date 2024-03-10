@@ -27,13 +27,13 @@ class TaskDatasource {
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
         CREATE TABLE ${DBKeys.dbTable} (
-          ${DBKeys.idColumn} INTENGER PRIMARY KEY,
+          ${DBKeys.idColumn} INTEGER PRIMARY KEY AUTOINCREMENT,
           ${DBKeys.titleColumn} TEXT,
           ${DBKeys.noteColumn} TEXT,
           ${DBKeys.dateColumn} TEXT,
           ${DBKeys.timeColumn} TEXT,
           ${DBKeys.categoryColumn} TEXT,
-          ${DBKeys.isCompletedColumn} INTENGER,
+          ${DBKeys.isCompletedColumn} INTEGER
         )
       ''');
   }

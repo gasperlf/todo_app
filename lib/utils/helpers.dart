@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:todo_app/data/models/task.dart';
 import 'package:todo_app/providers/date_provider.dart';
 
 @immutable
@@ -22,6 +23,17 @@ class Helpers {
     } catch (e) {
       return '12:00';
     }
+  }
+
+  static bool isTaskFromSelectionDate(Task task, DateTime selectedDate) {
+    final DateTime taskDate = _stringToDateTime(task.date);
+    if (taskDate.year == selectedDate.year &&
+        taskDate.month == selectedDate.month &&
+        taskDate.day == selectedDate.day) {
+      return true;
+    }
+
+    return false;
   }
 
   static void selectDate(BuildContext context, WidgetRef ref) async {

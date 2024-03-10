@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_app/providers/category_provider.dart';
-import 'package:todo_app/utils/task_category.dart';
+import 'package:todo_app/utils/utils.dart';
 import 'package:todo_app/widgets/circle_container.dart';
 
 class CategoriesSelection extends ConsumerWidget {
@@ -38,7 +38,6 @@ class CategoriesSelection extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(30),
                   child: CircleContainer(
                     color: category.color.withOpacity(0.3),
-                    borderColor: category.color,
                     child: Icon(
                       category.icon,
                       color: selectedCategory == category
